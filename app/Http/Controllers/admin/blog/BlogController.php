@@ -56,7 +56,7 @@ class BlogController extends Controller
             $validData = $request->validate([
                 'title' => 'required|max:255',
                 'sort' => 'required|numeric',
-                'desc' => 'required',
+                'text' => 'required',
                 'img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5012',
                 'file' => 'max:5012'
             ],
@@ -64,7 +64,7 @@ class BlogController extends Controller
                     'title.required' => 'გთხოვთ შეავსოთ',
                     'title.max' => 'მაქსიმალური სირძე 255',
                     'sort.required' => 'გთხოვთ შეავსოთ',
-                    'desc.required' => 'გთხოვთ შეავსოთ',
+                    'text.required' => 'გთხოვთ შეავსოთ',
                     'sort.numeric' => 'შეიყვანეთ ციფრები',
                     'img.image' => 'ატვირთეთ (jpeg,png,jpg,gif,svg)',
                     'img.max' => '5მბ მქსიმალური ზომა',
@@ -90,8 +90,8 @@ class BlogController extends Controller
                 $locale => [
                     'title' => $validData['title'],
                     'author' => isset($request->author) && !empty($request->author) ? $request->author : null,
-                    'desc' => $validData['desc'],
-                    'text' => isset($request->text) && !empty($request->text) ? $request->text : null,
+                    'text' => str_replace('../../../source','/public/js/source',$validData['text']),
+                    'desc' => isset($request->desc) && !empty($request->desc) ? str_replace('../../../source','/public/js/source',$request->desc) : null,
                     'img' => isset($imageName) && !empty($imageName) ? $imageName : null,
                     'file' => isset($fileName) && !empty($fileName) ? $fileName : null,
                 ]
@@ -122,7 +122,7 @@ class BlogController extends Controller
             $validData = $request->validate([
                 'title' => 'required|max:255',
                 'sort' => 'required|numeric',
-                'desc' => 'required',
+                'text' => 'required',
                 'img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5012',
                 'file' => 'max:5012'
             ],
@@ -130,7 +130,7 @@ class BlogController extends Controller
                     'title.required' => 'გთხოვთ შეავსოთ',
                     'title.max' => 'მაქსიმალური სირძე 255',
                     'sort.required' => 'გთხოვთ შეავსოთ',
-                    'desc.required' => 'გთხოვთ შეავსოთ',
+                    'text.required' => 'გთხოვთ შეავსოთ',
                     'sort.numeric' => 'შეიყვანეთ ციფრები',
                     'img.image' => 'ატვირთეთ (jpeg,png,jpg,gif,svg)',
                     'img.max' => '5მბ მქსიმალური ზომა',
@@ -155,8 +155,8 @@ class BlogController extends Controller
                 $locale => [
                     'title' => $validData['title'],
                     'author' => isset($request->author) && !empty($request->author) ? $request->author : null,
-                    'desc' => $validData['desc'],
-                    'text' => isset($request->text) && !empty($request->text) ? $request->text : null,
+                    'text' => str_replace('../../../../source','/public/js/source',$validData['text']),
+                    'desc' => isset($request->desc) && !empty($request->desc) ? str_replace('../../../../source','/public/js/source',$request->desc) : null,
                     'img' => isset($imageName) && !empty($imageName) ? $imageName : $postEdit->img,
                     'file' => isset($fileName) && !empty($fileName) ? $fileName : $postEdit->file,
                 ]

@@ -77,7 +77,7 @@ class KodexController extends Controller
                 'sort' => $validData['sort'],
                 $locale => [
                     'title' => $validData['title'],
-                    'text' => $validData['text'],
+                    'text' => str_replace('../../../source','/public/js/source',$validData['text']),
                 ]
             ];
             $add_menu = $this->PostRepositories->create($data);
@@ -124,7 +124,7 @@ class KodexController extends Controller
                 'sort' => $validData['sort'],
                 $locale => [
                     'title' => $validData['title'],
-                    'text' => $validData['text'],
+                    'text' => str_replace('../../../../source','/public/js/source',$validData['text']),
                 ]
             ];
             $add_menu = $this->PostRepositories->updateOrCreate($postid > 0 ? ['id' => $postid] : ['id' => null],$data);
