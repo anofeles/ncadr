@@ -13,4 +13,14 @@ class MenuRepositories extends Repository
     {
         return Menu::class;// TODO: Implement model() method.
     }
+
+    public function menu_to_any(){
+        $foo = new Menu();
+        return $foo->menu_to_any();
+    }
+
+    public function menu_dam(){
+        $foo = new Menu();
+        return $foo->menu_dam();
+    }
 }
