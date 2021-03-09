@@ -13,4 +13,9 @@ class PostRepositories extends Repository
     {
         return Post::class;// TODO: Implement model() method.
     }
+
+    public function menu_to_any(){
+        $foo = new Post();
+        return $foo->menu_to_any();
+    }
 }

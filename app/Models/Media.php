@@ -13,7 +13,9 @@ class Media extends Model
         'uuid',
         'locale',
         'type',
-        'img'
+        'img',
+        'title'
     ];
+
 
 }

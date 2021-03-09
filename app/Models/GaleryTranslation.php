@@ -10,5 +10,5 @@ class GaleryTranslation extends Model
 {
     protected $table = 'galery_translations';
     public $timestamps = false;
-    protected $fillable = ['title', 'img'];
+    protected $fillable = ['title', 'img','locale'];
 }

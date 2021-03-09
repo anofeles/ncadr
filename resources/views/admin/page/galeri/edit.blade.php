@@ -68,13 +68,18 @@
                                     @foreach($mediaImg as $mediaImgitem)
                                         <a href="{{route('admin.galeri.mediaid',['mediaid'=>$mediaImgitem->id])}}">
                                             <img src="{{asset('images/galeri/'.$mediaImgitem->img)}}" width="150">
+                                            <span>{{$mediaImgitem->title}}</span>
                                         </a>
                                     @endforeach
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="customFile">Custom File</label> -->
                                     <div class="custom-file">
-                                        <input multiple name="file[]" type="file" class="custom-file-input @error('file') is-invalid @enderror" id="customFile">
+                                        <input name="file[]" type="file" class="custom-file-input @error('file') is-invalid @enderror">
+                                        <input name="img_title[]" type="text" class="form-control @error('img_title') is-invalid @enderror" placeholder="title">
+                                        <div id="addimginput"></div>
+                                        <br>
+                                        <input type="button" value="add" id="imgadd">
                                         <label class="custom-file-label" for="customFile">ფაილი</label>
                                         @error('file')
                                         <div class="alert alert-danger">{{ $message }}</div>

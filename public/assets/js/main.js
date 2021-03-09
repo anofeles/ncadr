@@ -258,5 +258,19 @@
       clickable: true
     }
   });
+  $(window).on('resize', function () {
+    if($(window).width() < 1180){
+      $('#navgiation').removeClass( "brankamp_head" ).addClass( "brankamp_head_mob" )
+    }
+    else{
+      $('#navgiation').removeClass( "brankamp_head_mob" ).addClass( "brankamp_head" )
+    }
+  });
+   if($(window).width() < 1180){
+     $('#navgiation').removeClass( "brankamp_head" ).addClass( "brankamp_head_mob" )
+   }
+   else{
+     $('#navgiation').removeClass( "brankamp_head_mob" ).addClass( "brankamp_head" )
+   }
 
-})()
+  })()

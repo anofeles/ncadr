@@ -1,22 +1,30 @@
 @extends('front.layouts.index')
 @section('section')
 
-    <!-- ======= Blog Section ======= -->
-    <section class="team">
-        <div class="container">
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
             <div class="row">
                 <div class="col-lg-8 entries">
                     @foreach($post as $postitem)
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="float: left">
-                        <div class="member">
+                    <article class="entry">
+                        <div class="entry-img">
                             @if(empty($postitem->img))
                                 <img src="{{asset('assets/img/portfolio/portfolio-1.jpg')}}" class="img-fluid" alt="">
                             @else
                                 <img src="{{asset('images/post/'.$postitem->img)}}" class="img-fluid" alt="">
                             @endif
-                            <h4>{{$postitem->author}}</h4>
                         </div>
-                    </div>
+                        <h2 class="entry-title">
+                            <a href="blog-single.html">{{$postitem->title}}</a>
+                        </h2>
+                        <div class="entry-content">
+                            <p>{!! $postitem->desc !!}</p>
+                            <div class="read-more">
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+                    </article><!-- End blog entry -->
                     @endforeach
                 </div><!-- End blog entries list -->
 
@@ -36,8 +44,8 @@
                 @endif
 
             </div>
-        </div>
-    </section><!-- End Blog Section -->
 
+        </div>
+    </section>
 
 @endsection

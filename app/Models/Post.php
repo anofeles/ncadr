@@ -18,6 +18,7 @@ class Post extends Model implements TranslatableContract
         'text',
         'img',
         'file',
+        'locale'
     ];
     protected $table = 'post';
     protected $fillable = [
@@ -27,4 +28,10 @@ class Post extends Model implements TranslatableContract
         'mtav',
         'sort'
     ];
+
+    public function menu_to_any(){
+        return $this->belongsToMany(Post::class,'menu_to_any','deleted_at','row_uuid','uuid','uuid')
+            ->withPivot('row_uuid','menu_uuid');
+
+    }
 }

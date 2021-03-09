@@ -22,7 +22,10 @@
 
 <!-- Template Main CSS File -->
 <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+<link href="{{asset('assets/css/galeri.css')}}" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- =======================================================
 * Template Name: Eterna - v4.0.0
 * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/

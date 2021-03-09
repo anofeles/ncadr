@@ -35,7 +35,13 @@
 {{--<!-- Summernote -->--}}
 {{--<script src="{{asset('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>--}}
 
-
+<script>
+    $(document).ready(function(){
+        $("#imgadd").click(function(){
+            $('<input name="file[]" type="file" /><br><input name="img_title[]" type="text" class="form-control @error('img_title') is-invalid @enderror"  placeholder="title">').insertAfter("#addimginput");
+        });
+    });
+</script>
 {{--<script>--}}
 {{--    $(function () {--}}
 {{--        // Summernote--}}

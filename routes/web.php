@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('new', 'HomeController@new')->name('new');
-Route::get('them', 'HomeController@them')->name('them');
-Route::get('kodex', 'HomeController@kodex')->name('kodex');
-Route::get('fullthem', 'HomeController@fullthem')->name('fullthem');
-
+Route::get('/{locale}/{type}/{mid}/{slug}', 'HomeController@post')->name('home.post');
+Route::get('/{locale}/full/{postid}', 'HomeController@full')->name('home.full');
+Route::get('/{locale}/galeri/{galtid}', 'HomeController@galfull')->name('home.galfull');
 
 
 

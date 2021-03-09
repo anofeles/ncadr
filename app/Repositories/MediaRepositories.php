@@ -13,4 +13,5 @@ class MediaRepositories extends Repository
     {
         return Media::class;// TODO: Implement model() method.
     }
+
 }

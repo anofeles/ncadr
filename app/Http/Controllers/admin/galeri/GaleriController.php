@@ -102,12 +102,13 @@ class GaleriController extends Controller
             ];
             $galeriMav = $this->GaleryRepositories->create($data);
             if(isset($fileMedia) && !empty($fileMedia)) {
-                foreach ($fileMedia as $fileMediaitem) {
+                foreach ($fileMedia as $i => $fileMediaitem) {
                     $media = [
                         'uuid' => Uuid::uuid6(),
                         'locale' => $locale,
                         'type' => 'GALERI',
                         'img' => $fileMediaitem,
+                        'title' => $request->img_title[$i]
                     ];
                     $mediaImg = $this->MediaRepositories->create($media);
                     $mediaToAny = [
@@ -149,6 +150,7 @@ class GaleriController extends Controller
             view()->share('mediaImg',$mediaImg);
         }
         if ($request->method() == 'POST') {
+
             $validData = $request->validate([
                 'title' => 'required|max:255',
                 'sort' => 'required|numeric',
@@ -190,12 +192,13 @@ class GaleriController extends Controller
             $galeriMav = $this->GaleryRepositories->updateOrCreate($postid > 0 ? ['id' => $postid] : ['id' => null],$data);
 
             if(isset($fileMedia) && !empty($fileMedia)) {
-                foreach ($fileMedia as $fileMediaitem) {
+                foreach ($fileMedia as $i => $fileMediaitem) {
                     $media = [
                         'uuid' => Uuid::uuid6(),
                         'locale' => $locale,
                         'type' => 'GALERI',
                         'img' => $fileMediaitem,
+                        'title' => $request->img_title[$i]
                     ];
                     $mediaImg = $this->MediaRepositories->create($media);
                     $mediaToAny = [
