@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენუ</h1>
+                    <h1>მენიუ / Menu</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -18,9 +18,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-{{--                            <h3 class="card-title">მენიუ</h3>--}}
+{{--                            <h3 class="card-title">მენიუ / Menu</h3>--}}
                             <a class="btn btn-app bg-success" href="{{route('admin.menu.add', ['locale' => $locale])}}">
-                                <i class="fas fa-plus"></i> დამატება
+                                <i class="fab fa-elementor"></i> დამატება / Add
                             </a>
                         </div>
                         <!-- /.card-header -->
@@ -41,16 +41,16 @@
                                                     id
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    სათაური
+                                                    სათაური / Name
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    სორტირება
+                                                    სორტირება / Order
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    ატვირთვის თარიღი
+                                                    ატვირთვის თარიღი / Date
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    აქტივობა
+                                                    მოქმედება / Action
                                                 </th>
                                             </tr>
                                             </thead>

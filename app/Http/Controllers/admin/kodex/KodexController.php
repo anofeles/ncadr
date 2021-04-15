@@ -41,7 +41,9 @@ class KodexController extends Controller
                 $query
                     ->where('locale', $locale);
             })->where('type','=','CODEX')->get();
-        return view('admin.page.kodex', compact('post', 'locale'));
+        $menu = $this->PostRepositories->menu_to_any()->get();
+        $meniuviu = $this->MenuRepositories->where('type','=','CODEX')->get();
+        return view('admin.page.kodex', compact('post', 'locale','menu','meniuviu'));
     }
 
     public function addpost($locale = 'ka', Request $request)

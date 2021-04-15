@@ -2,7 +2,7 @@
 <a href="{{route('home')}}" class="brand-link" target="_blank">
     <img src="{{asset('admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
-    <span class="brand-text font-weight-light">icla2022</span>
+    <span class="brand-text font-weight-light">NCADR</span>
 </a>
 
 <!-- Sidebar -->
@@ -22,20 +22,20 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-            <li class="nav-header">EXAMPLES</li>
+            <li class="nav-header">კომპონენტები / Elements</li>
             <li class="nav-item has-treeview">
                 <a href="{{route('admin.menu',['locale'=>$locale])}}" class="nav-link">
-                    <i class="nav-icon far fa-envelope"></i>
+                    <i class="nav-icon far fa-address-book"></i>
                     <p>
-                        მენიუ
+                        მენიუ / Menu
                     </p>
                 </a>
             </li>
             <li class="nav-item has-treeview">
                 <a href="{{route('admin.post',['locale'=>$locale])}}" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
+                    <i class="nav-icon fas fa-file-alt"></i>
                     <p>
-                        პოსტი
+                        პოსტი / Page
                     </p>
                 </a>
             </li>
@@ -43,39 +43,47 @@
                 <a href="{{route('admin.news',['locale'=>$locale])}}" class="nav-link">
                     <i class="nav-icon fas fa-book"></i>
                     <p>
-                        სიახლე
+                        სიახლე / News
                     </p>
                 </a>
             </li>
             <li class="nav-item has-treeview">
                 <a href="{{route('admin.kodex',['locale'=>$locale])}}" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
+                    <i class="nav-icon fas fa-tasks"></i>
                     <p>
-                        კოდექსი
+                        კოდექსები / Rules
                     </p>
                 </a>
             </li>
             <li class="nav-item has-treeview">
                 <a href="{{route('admin.them',['locale'=>$locale])}}" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
+                    <i class="nav-icon fas fa-portrait"></i>
                     <p>
-                        თანამშრომლები
+                        თანამშრომლები / Staff
                     </p>
                 </a>
             </li>
             <li class="nav-item has-treeview">
                 <a href="{{route('admin.blog',['locale'=>$locale])}}" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
+                    <i class="nav-icon fas fa-pen"></i>
                     <p>
-                        ბლოგი
+                        ბლოგი / Blog
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item has-treeview">
+                <a href="{{route('admin.biblioteka',['locale'=>$locale])}}" class="nav-link">
+                    <i class="nav-icon fas fa-pen"></i>
+                    <p>
+                        ბიბლიოთეკა / Blog
                     </p>
                 </a>
             </li>
             <li class="nav-item has-treeview">
                 <a href="{{route('admin.galeri',['locale'=>$locale])}}" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
+                    <i class="nav-icon fas fa-photo-video"></i>
                     <p>
-                        გალერეა
+                        გალერეა / Gallery
                     </p>
                 </a>
             </li>

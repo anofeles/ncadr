@@ -4,7 +4,9 @@
 namespace App\Http\Controllers\admin\news;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
 
@@ -12,23 +14,26 @@ use App\Repositories\PostRepositories;
 use App\Repositories\LocaleRepositories;
 use App\Repositories\MenuRepositories;
 use App\Repositories\MenuToAnyRepositories;
+use App\Repositories\SubscribeRepositories;
 
 
 class NewsController extends Controller
 {
-    protected $PostRepositories, $LocaleRepositories, $MenuRepositories, $MenuToAnyRepositories;
+    protected $PostRepositories, $LocaleRepositories, $MenuRepositories, $MenuToAnyRepositories, $SubscribeRepositories;
 
     public function __construct(
         PostRepositories $PostRepositories,
         LocaleRepositories $LocaleRepositories,
         MenuRepositories $MenuRepositories,
-        MenuToAnyRepositories $MenuToAnyRepositories
+        MenuToAnyRepositories $MenuToAnyRepositories,
+        SubscribeRepositories $SubscribeRepositories
     )
     {
         $this->PostRepositories = $PostRepositories;
         $this->MenuRepositories = $MenuRepositories;
         $this->LocaleRepositories = $LocaleRepositories;
         $this->MenuToAnyRepositories = $MenuToAnyRepositories;
+        $this->SubscribeRepositories = $SubscribeRepositories;
         $this->middleware('auth');
         view()->share('local',$this->LocaleRepositories->all());
     }
@@ -40,8 +45,10 @@ class NewsController extends Controller
             $post = $this->PostRepositories->whereHas('translations', function ($query) use ($locale) {
                 $query
                     ->where('locale', $locale);
-            })->where('type','=','NEWS')->get();
-        return view('admin.page.news', compact('post', 'locale'));
+            })->where('type','=','NEWS')->orderby('sort','DESC')->get();
+            $menu = $this->PostRepositories->menu_to_any()->get();
+            $meniuviu = $this->MenuRepositories->where('type','=','NEWS')->get();
+        return view('admin.page.news', compact('post', 'locale','menu','meniuviu'));
     }
 
     public function addpost($locale = 'ka', Request $request)
@@ -101,6 +108,16 @@ class NewsController extends Controller
                 'row_uuid'=>$add_menu->uuid
             ];
             $this->MenuToAnyRepositories->create($menutoany);
+
+            $subMail  = $this->SubscribeRepositories->where('active','=',1)->get();
+            foreach ($subMail as $subMailthis) {
+                $dataSunscriber = [
+                    'url'=> url('/').'/'.$add_menu->locale.'/full/'.$add_menu->id,
+                    'title'=>$add_menu->title,
+                    'remova'=>$subMailthis->uuid
+                ];
+                Mail::to($subMailthis->email)->send(new OrderShipped($dataSunscriber));
+            }
         }
 
         return view('admin.page.news.add', compact('aboutMenu', 'locale'));

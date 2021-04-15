@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Eterna Bootstrap Template - Index</title>
+<title>ncadr</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -22,7 +22,7 @@
 
 <!-- Template Main CSS File -->
 <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-<link href="{{asset('assets/css/galeri.css')}}" rel="stylesheet">
+{{--<link href="{{asset('assets/css/galeri.css')}}" rel="stylesheet">--}}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

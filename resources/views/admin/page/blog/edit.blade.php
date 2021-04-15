@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენიუს </h1>
+                    <h1>ბლოგი </h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -22,7 +22,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="post" action="{{route('admin.kodex.edit',['locale'=>$locale,'postid'=>$postEdit->id])}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('admin.blog.edit',['locale'=>$locale,'postid'=>$postEdit->id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
@@ -101,6 +101,13 @@
                                         class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
                                         <input @if($postEdit->active == 1) checked="checked" @endif name="active" type="checkbox" class="custom-control-input" id="customSwitch3">
                                         <label class="custom-control-label" for="customSwitch3">აქტიური</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div
+                                            class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                        <input @if($postEdit->mtav == 1) checked="checked" @endif  name="mtav" type="checkbox" class="custom-control-input" id="customSwitch2">
+                                        <label class="custom-control-label" for="customSwitch2">მთავარი</label>
                                     </div>
                                 </div>
                             </div>

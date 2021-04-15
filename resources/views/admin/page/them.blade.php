@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>პოსტი</h1>
+                    <h1>თანამშრომლები</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -40,7 +40,7 @@
                                                     id
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    სათაური
+                                                    სახელი გვარი
                                                 </th>
                                                 <th rowspan="1" colspan="1">
                                                     სორტირება

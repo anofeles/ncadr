@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენიუს </h1>
+                    <h1>კოდექსი </h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -22,6 +22,9 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
+                          <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">დამატება/Submit</button>
+                            </div>
                         <form method="post" action="{{route('admin.kodex.add',['locale'=>$locale])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
@@ -34,7 +37,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">სორტირება</label>
+                                    <label for="exampleInputEmail1">დალაგება</label>
                                     <input name="sort" type="text" class="form-control @error('sort') is-invalid @enderror" id="exampleInputEmail1"
                                            placeholder="სორტირება" value="{{ old('sort') }}">
                                     @error('sort')
@@ -72,7 +75,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">დამატება/Submit</button>
                             </div>
                         </form>
                     </div>

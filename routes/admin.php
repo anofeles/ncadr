@@ -71,6 +71,31 @@ Route::prefix('backend')->group(function () {
         Route::get('/media/{mediaid}', 'GaleriController@mediaimgremova')->name('admin.galeri.mediaid');
         Route::get('/delete/{postid}/{locale}', 'GaleriController@deletepost')->name('admin.galeri.delete');
     });
+
+    Route::prefix('biblioteka')->namespace('biblioteka')->group(function () {
+        Route::get('/{locale}', 'BibliotekaController@index')->name('admin.biblioteka');
+        Route::get('/add/{locale}', 'BibliotekaController@addbiblioteka')->name('admin.biblioteka.add');
+        Route::post('/add/{locale}', 'BibliotekaController@addbiblioteka')->name('admin.biblioteka.add');
+        Route::get('/edit/{postid}/{locale}', 'BibliotekaController@editbook')->name('admin.edit.biblioteka');
+        Route::post('/edit/{postid}/{locale}', 'BibliotekaController@editbook')->name('admin.edit.biblioteka');
+        Route::get('/delete/{postid}/{locale}', 'BibliotekaController@deletebook')->name('admin.delete.biblioteka');
+        Route::prefix('biblioteka_categori')->group(function () {
+            Route::get('/categor{locale}', 'BibliotekaController@categorIndex')->name('admin.biblioteka.categorIndex');
+            Route::get('/add/{locale}', 'BibliotekaController@addcategor')->name('admin.biblioteka.categorIndex.add');
+            Route::post('/add/{locale}', 'BibliotekaController@addcategor')->name('admin.biblioteka.categorIndex.add');
+            Route::get('/edit/{postid}/{locale}', 'BibliotekaController@editcategor')->name('admin.edit.biblioteka.categorIndex');
+            Route::post('/edit/{postid}/{locale}', 'BibliotekaController@editcategor')->name('admin.edit.biblioteka.categorIndex');
+            Route::get('/delete/{postid}/{locale}', 'BibliotekaController@deletecategor')->name('admin.delete.biblioteka.categorIndex');
+        });
+        Route::prefix('biblioteka_lamguage')->group(function () {
+            Route::get('/lamguage{locale}', 'BibliotekaController@lamguageIndex')->name('admin.biblioteka.lamguage');
+            Route::get('/add/{locale}', 'BibliotekaController@addlamguage')->name('admin.biblioteka.lamguage.add');
+            Route::post('/add/{locale}', 'BibliotekaController@addlamguage')->name('admin.biblioteka.lamguage.add');
+            Route::get('/edit/{postid}/{locale}', 'BibliotekaController@editlamguage')->name('admin.edit.biblioteka.lamguage');
+            Route::post('/edit/{postid}/{locale}', 'BibliotekaController@editlamguage')->name('admin.edit.biblioteka.lamguage');
+            Route::get('/delete/{postid}/{locale}', 'BibliotekaController@deletelamguage')->name('admin.delete.biblioteka.lamguage');
+        });
+    });
 });
 
 Route::namespace('\App\Http\Controllers\frontend\Auth')->group(function () {

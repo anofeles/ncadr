@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენიუს </h1>
+                    <h1>სიახლის დამატება </h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -18,8 +18,11 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">დამატება</h3>
+                            <h3 class="card-title">დამატება/add</h3>
                         </div>
+                        <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">დამატება/ADD</button>
+                            </div>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form method="post" action="{{route('admin.news.add',['locale'=>$locale])}}" enctype="multipart/form-data">
@@ -34,9 +37,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">სორტირება</label>
+                                    <label for="exampleInputEmail1">დალაგება</label>
                                     <input name="sort" type="text" class="form-control @error('sort') is-invalid @enderror" id="exampleInputEmail1"
-                                           placeholder="სორტირება" value="{{ old('sort') }}">
+                                           placeholder="რიგის ნომერი" value="{{ old('sort') }}">
                                     @error('sort')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -47,8 +50,8 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">ტექსტ</label>
-                                    <textarea class="form-control textarea" rows="3" placeholder="ტექსტ" name="text">{{ old('text') }}</textarea>
+                                    <label for="exampleInputEmail1">სრული ტექსტი</label>
+                                    <textarea class="form-control textarea" rows="3" placeholder="ტექსტი" name="text">{{ old('text') }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <!-- select -->
@@ -101,7 +104,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">დამატება/Submit</button>
                             </div>
                         </form>
                     </div>

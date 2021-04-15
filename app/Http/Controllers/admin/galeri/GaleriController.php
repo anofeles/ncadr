@@ -215,6 +215,7 @@ class GaleriController extends Controller
                 'menu_uuid'=>$menuuuid->uuid,
                 'row_uuid'=>$galeriMav->uuid
             ];
+//            dd($this->MenuToAnyRepositories->updateOrCreate(isset($menutoany->id) && $menutoany->id > 0 ? ['id' => $menutoany->id] : ['id' => null],$menutoany));
             $this->MenuToAnyRepositories->updateOrCreate(isset($menutoany->id) && $menutoany->id > 0 ? ['id' => $menutoany->id] : ['id' => null],$menutoany);
 
             return back();

@@ -84,6 +84,7 @@
                                             <option value="CODEX">კოდექსი</option>
                                             <option value="THEM">თნამშრომლები</option>
                                             <option value="BLOG">ბლოგი</option>
+                                            <option value="LIBRARI">ბიბლიოთეკა</option>
                                             <option value="GALERI">გალერეა</option>
                                         </select>
                                     </div>

@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>პოსტი</h1>
+                    <h1>პოსტი / Page</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -19,7 +19,7 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="btn btn-app bg-success" href="{{route('admin.post.add', ['locale' => $locale])}}">
-                                <i class="fas fa-plus"></i> დამატება
+                                <i class="fas fa-file"></i> დამატება / Add
                             </a>
                         </div>
                         <!-- /.card-header -->
@@ -40,16 +40,19 @@
                                                     id
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    სათაური
+                                                    სათაური / Name
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    სორტირება
+                                                    სორტირება / Sort
+                                                </th>
+                                                <th rowspan="1" colspan="1">
+                                                    მენიუ
                                                 </th>
                                                 <th rowspan="1" colspan="1">
                                                     ატვირთვის თარიღი
                                                 </th>
                                                 <th rowspan="1" colspan="1">
-                                                    აქტივობა
+                                                    მოქმედება / Action
                                                 </th>
                                             </tr>
                                             </thead>
@@ -59,6 +62,17 @@
                                                     <td class="dtr-control sorting_1" tabindex="0">{{$postitem->id}}</td>
                                                     <td>{{$postitem->title}}</td>
                                                     <td>{{$postitem->sort}}</td>
+                                                    <td>
+                                                        @foreach($menu as $menuitem)
+                                                            @if($menuitem->pivot->row_uuid == $postitem->uuid)
+                                                                @foreach($meniuviu as $meniuviuitem)
+                                                                    @if($menuitem->pivot->menu_uuid == $meniuviuitem->uuid)
+                                                                        {{$meniuviuitem->title}}
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                        @endforeach
+                                                    </td>
                                                     <td>{{$postitem->created_at}}</td>
                                                     <td>
                                                         <a class="btn btn-app" href="{{route('admin.post.edit', ['postid'=>$postitem->id,'locale' => $locale])}}">

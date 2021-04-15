@@ -3,13 +3,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h4>გამოწერა</h4>
-                <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                <h4>{{__('site.subakriber_news')}}</h4>
+                <p>{{__('site.subakriber_news_title')}}</p>
             </div>
             <div class="col-lg-6">
-                <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
+                <form action="{{route('home.subscribe')}}" method="post">
+                    @csrf
+                    <input class="@error('subscribe') is-invalid @enderror" type="email" name="subscribe"><input type="submit" value=" {{__('site.sub_but')}}">
+
                 </form>
+                @error('subscribe')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
         </div>
     </div>
@@ -20,48 +25,51 @@
         <div class="row">
 
             <div class="col-lg-3 col-md-6 footer-contact">
-                <h4>Contact Us</h4>
-                <p>
-                    A108 Adam Street <br>
-                    New York, NY 535022<br>
-                    United States <br><br>
-                    <strong>Phone:</strong> +1 5589 55488 55<br>
-                    <strong>Email:</strong> info@example.com<br>
-                </p>
+             <h4>{{__('site.contact')}}</h4>
+                          <strong> {{__('site.contact_t')}}</strong>
+              {{__('site.contact_text')}}
+                 {{__('site.contact_add1')}} <br>
+                   <strong> {{__('site.contact_tel')}}</strong> +995 77 94 97 78<br>
+                  <strong> {{__('site.contact_email')}} </strong> apply.ncard@tsu.ge<br>
+
                 <div class="social-links mt-3">
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.facebook.com/TsuNationalCenterForAdr" class="facebook"><i class="bx bxl-facebook"></i></a>
                     <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
                 </div>
             </div>
             <div class="col-lg-5 col-md-6 footer-info">
-                <form>
+                <form action="{{route('home.contaqtncadr')}}" method="post">
+                    @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1">{{__('site.form_name')}}</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1">{{__('site.form_email')}}</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="exampleFormControlTextarea1">{{__('site.form_text')}}</label>
+                        <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">{{__('site.form_send')}}</button>
                 </form>
             </div>
             <div class="col-lg-4 col-md-6 footer-info">
-                <h3>About Eterna</h3>
-                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-                <img src="{{asset('assets/img/ewmi.jpg')}}" width="175">
-                <img src="{{asset('assets/img/usaid.jpg')}}" width="175">
+                <h3>NCADR</h3>
+                @if(isset($locale) && $locale == 'en')
+                <p style="text-align: justify;">Development of the web-site was made possible by the generous support of the American people through the United States Agency for International Development (USAID). The contents of the web-page are the responsibility of NCADR and do not necessarily reflect the views of the East West Management Institute Inc. , the United States Agency for International Development or the United States Government</p>
+                @else
+                    <p style="text-align: justify;">საიტის შექმნა ამერიკელი ხალხის გულისხმიერების შედეგად, USAID-ის დახმარებით გახდა შესაძლებელი. ვებ-გვერდზე განთავსებული მასალა ქვეყნდება NCADR-ის პასუხისმგებლობით და შესაძლოა არ გამოხატავდეს USAID-ის, ამერიკის შეერთებული &nbsp;შტატების მთავრობის ან აღმოსავლეთ-დასავლეთის &nbsp;მართვის ინსტიტუტის მოსაზრებებს</p>
+                @endif
+                <img src="{{asset('assets/img/usaidgeo.jpg')}}" alt="აშშ-ის საერთაშორისო განვითარების სააგენტოს ლოგო" width="225">
+                <img src="{{asset(__('site.ewmi_baner1'))}}" alt="აღმოსავლეთ-დასავლეთის მართვის ინსტიტუტის ლოგო" width="185">
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="copyright">
-        &copy; Copyright <strong><span>Eterna</span></strong>. All Rights Reserved
-    </div>
+    <div class="copyright">&copy; {{__('site.form_copy')}}
+         <strong><span>NCADR</span></strong></div>
 </div>

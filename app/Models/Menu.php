@@ -30,8 +30,10 @@ class Menu extends Model implements TranslatableContract
     public function menu_dam(){
         return DB::table('menu AS m')
             ->join('menu AS s', 'm.id', '=', 's.menu_dam_id')
+            ->whereNull('m.menu_dam_id')
             ->select('m.id')
             ->groupBy('m.id');
 
     }
+
 }

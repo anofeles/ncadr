@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="7405b93a-3d21-4715-824f-ee40dd38c802" name="ncadrtest" url="http://ncadr.tsu.ge">
+      <webServer id="d45d1be3-5bb5-49b0-8888-3e4766d42660" name="ncadr" url="http://ncadr.tsu.ge">
         <fileTransfer rootFolder="/public_html/test" host="ncadr.tsu.ge" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

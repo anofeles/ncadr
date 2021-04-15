@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენიუს </h1>
+                    <h1>ბლოგი </h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -66,7 +66,7 @@
                                 <div class="form-group">
                                     <!-- select -->
                                     <div class="form-group">
-                                        <label>მენიუ</label>
+                                        <label>მენიუს არჩევა</label>
                                         <select class="custom-select" name="menu_id">
                                             <option value="0">მენიუ</option>
                                             @foreach($aboutMenu as $aboutMenuitem)
@@ -80,7 +80,7 @@
                                     <!-- <label for="customFile">Custom File</label> -->
                                     <div class="custom-file">
                                         <input name="img" type="file" class="custom-file-input @error('img') is-invalid @enderror" id="customFile">
-                                        <label class="custom-file-label" for="customFile">სურათი</label>
+                                        <label class="custom-file-label" for="customFile">ფოტო</label>
                                         @error('img')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -103,11 +103,18 @@
                                         <label class="custom-control-label" for="customSwitch3">აქტიური</label>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <div
+                                            class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                        <input name="mtav" type="checkbox" class="custom-control-input" id="customSwitch2">
+                                        <label class="custom-control-label" for="customSwitch2">მთავარი</label>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">დამატება</button>
                             </div>
                         </form>
                     </div>

@@ -13,6 +13,7 @@ class PostTranslation extends Model
     protected $fillable = [
         'locale',
         'author',
+        'enploi',
         'title',
         'desc',
         'text',

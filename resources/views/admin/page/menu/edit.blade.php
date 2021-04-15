@@ -84,6 +84,7 @@
                                             <option  @if($menuedit->type == 'CODEX') selected="selected" @endif value="CODEX">კოდექსი</option>
                                             <option  @if($menuedit->type == 'THEM') selected="selected" @endif value="THEM">თნამშრომლები</option>
                                             <option  @if($menuedit->type == 'BLOG') selected="selected" @endif  value="BLOG">ბლოგი</option>
+                                            <option @if($menuedit->type == 'LIBRARI') selected="selected" @endif value="LIBRARI">ბიბლიოთეკა</option>
                                             <option @if($menuedit->type == 'GALERI') selected="selected" @endif value="GALERI">გალერეა</option>
                                         </select>
                                     </div>

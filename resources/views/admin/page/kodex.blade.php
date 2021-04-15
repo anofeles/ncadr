@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>პოსტი</h1>
+                    <h1>კოდექსი</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -46,6 +46,9 @@
                                                     სორტირება
                                                 </th>
                                                 <th rowspan="1" colspan="1">
+                                                    მენიუ
+                                                </th>
+                                                <th rowspan="1" colspan="1">
                                                     ატვირთვის თარიღი
                                                 </th>
                                                 <th rowspan="1" colspan="1">
@@ -59,6 +62,17 @@
                                                     <td class="dtr-control sorting_1" tabindex="0">{{$postitem->id}}</td>
                                                     <td>{{$postitem->title}}</td>
                                                     <td>{{$postitem->sort}}</td>
+                                                    <td>
+                                                        @foreach($menu as $menuitem)
+                                                            @if($menuitem->pivot->row_uuid == $postitem->uuid)
+                                                                @foreach($meniuviu as $meniuviuitem)
+                                                                    @if($menuitem->pivot->menu_uuid == $meniuviuitem->uuid)
+                                                                        {{$meniuviuitem->title}}
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                        @endforeach
+                                                    </td>
                                                     <td>{{$postitem->created_at}}</td>
                                                     <td>
                                                         <a class="btn btn-app" href="{{route('admin.kodex.edit', ['postid'=>$postitem->id,'locale' => $locale])}}">

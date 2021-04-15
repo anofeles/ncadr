@@ -13,6 +13,7 @@ class Post extends Model implements TranslatableContract
     use Translatable;
     public $translatedAttributes = [
         'author',
+        'enploi',
         'title',
         'desc',
         'text',

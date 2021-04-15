@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენიუს </h1>
+                    <h1>თანამშრომლების დამატება </h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -26,9 +26,9 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">სათაური</label>
+                                    <label for="exampleInputEmail1">სახელი გვარი</label>
                                     <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
-                                           placeholder="სათაური" value="{{ old('title') }}">
+                                           placeholder="სახელი გვარი" value="{{ old('title') }}">
                                     @error('title')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -50,13 +50,21 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">ტექსტ</label>
-                                    <textarea class="form-control textarea" rows="3" placeholder="ტექსტ" name="text">{{ old('text') }}</textarea>
+                                    <label for="exampleInputEmail1">თანამდებობა</label>
+                                    <input name="enploi" type="text" class="form-control @error('enploi') is-invalid @enderror" id="exampleInputEmail1"
+                                           placeholder="თანამდებობა" value="{{ old('enploi') }}">
+                                    @error('enploi')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">ტექსტი</label>
+                                    <textarea class="form-control textarea" rows="3" placeholder="ტექსტი" name="text">{{ old('text') }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <!-- select -->
                                     <div class="form-group">
-                                        <label>მენიუ</label>
+                                        <label>აირჩიეთ მენიუ</label>
                                         <select class="custom-select" name="menu_id">
                                             <option value="0">მენიუ</option>
                                             @foreach($aboutMenu as $aboutMenuitem)
@@ -70,7 +78,7 @@
                                     <!-- <label for="customFile">Custom File</label> -->
                                     <div class="custom-file">
                                         <input name="img" type="file" class="custom-file-input @error('img') is-invalid @enderror" id="customFile">
-                                        <label class="custom-file-label" for="customFile">სურათი</label>
+                                        <label class="custom-file-label" for="customFile">ფოტო</label>
                                         @error('img')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -104,7 +112,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">დამატება</button>
                             </div>
                         </form>
                     </div>

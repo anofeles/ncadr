@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>პოსტი</h1>
+                    <h1>ფოტო გალერეა</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="btn btn-app bg-success" href="{{route('admin.galeri.add', ['locale' => $locale])}}">
-                                <i class="fas fa-plus"></i> დამატება
+                                <i class="fas fa-images"></i> დამატება
                             </a>
                         </div>
                         <!-- /.card-header -->

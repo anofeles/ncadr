@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენიუს </h1>
+                    <h1>თანამშრომლის რედაქტირება </h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -46,6 +46,14 @@
                                     <input name="author" type="text" class="form-control @error('author') is-invalid @enderror" id="exampleInputEmail1"
                                            placeholder="ავტორი" value="{{$postEdit->author}}">
                                     @error('author')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">თანამდებობა</label>
+                                    <input name="enploi" type="text" class="form-control @error('enploi') is-invalid @enderror" id="exampleInputEmail1"
+                                           placeholder="თანამდებობა" value="{{$postEdit->enploi}}">
+                                    @error('enploi')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -104,7 +112,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">რედაქტირება</button>
                             </div>
                         </form>
                     </div>

@@ -6,33 +6,46 @@
         <div class="carousel-inner" role="listbox">
 
             <!-- Slide 1 -->
-            <div class="carousel-item active" style="background: url({{asset('assets/img/slide/slide-1.jpg')}})">
+            <div class="carousel-item active" style="background-image: url({{asset('assets/img/slide/s14.jpg')}});
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    ">
                 <div class="carousel-container">
                     <div class="carousel-content">
-                        <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Eterna</span></h2>
-                        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                        <h2 class="animate__animated animate__fadeInDown">Welcome to <span>N<h2test1>C</h2test1>ADR</span></h2>
+                        <p class="animate__animated animate__fadeInUp"></p>
+                            <h2 class="animate__animated animate__fadeInDown">SITE IS UNDER CONSTRUCTION</h2>
+
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="carousel-item" style="background: url({{asset('assets/img/slide/slide-2.jpg')}})">
+            <!-- Slide 2  -->
+            <div class="carousel-item" style="background-image: url({{asset('assets/img/slide/S143.jpg')}});
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    ">
                 <div class="carousel-container">
                     <div class="carousel-content">
-                        <h2 class="animate__animated fanimate__adeInDown">Lorem <span>Ipsum Dolor</span></h2>
-                        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                        <h2 class="animate__animated animate__fadeInDown">Welcome to <span>N<h2test1>C</h2test1>ADR</span></h2>
+                        <p class="animate__animated animate__fadeInUp"></p>
+                            <h2 class="animate__animated animate__fadeInUp">SITE IS UNDER CONSTRUCTION</h2>
                     </div>
-                </div>
+                </div>  
             </div>
 
             <!-- Slide 3 -->
-            <div class="carousel-item" style="background: url({{asset('assets/img/slide/slide-3.jpg')}})">
+            <div class="carousel-item" style="background-image: url({{asset('assets/img/slide/s4.jpg')}});
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    ">
                 <div class="carousel-container">
                     <div class="carousel-content">
-                        <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span></h2>
-                        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                        <h2 class="animate__animated animate__fadeInDown">Welcome to <span>N<h2test1>C</h2test1>ADR</span></h2>
+                        <p class="animate__animated animate__fadeInUp"></p>
+                            <h2 class="animate__animated animate__fadeInUp">SITE IS UNDER CONSTRUCTION</h2>
                     </div>
-                </div>
+                </div>    
             </div>
 
         </div>

@@ -23,4 +23,5 @@ class MenuRepositories extends Repository
         $foo = new Menu();
         return $foo->menu_dam();
     }
+
 }

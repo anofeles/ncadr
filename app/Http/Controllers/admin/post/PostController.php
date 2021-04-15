@@ -4,7 +4,9 @@
 namespace App\Http\Controllers\admin\post;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
 
@@ -12,23 +14,26 @@ use App\Repositories\PostRepositories;
 use App\Repositories\LocaleRepositories;
 use App\Repositories\MenuRepositories;
 use App\Repositories\MenuToAnyRepositories;
+use App\Repositories\SubscribeRepositories;
 
 
 class PostController extends Controller
 {
-    protected $PostRepositories, $LocaleRepositories, $MenuRepositories, $MenuToAnyRepositories;
+    protected $PostRepositories, $LocaleRepositories, $MenuRepositories, $MenuToAnyRepositories, $SubscribeRepositories;
 
     public function __construct(
         PostRepositories $PostRepositories,
         LocaleRepositories $LocaleRepositories,
         MenuRepositories $MenuRepositories,
-        MenuToAnyRepositories $MenuToAnyRepositories
+        MenuToAnyRepositories $MenuToAnyRepositories,
+        SubscribeRepositories $SubscribeRepositories
     )
     {
         $this->PostRepositories = $PostRepositories;
         $this->MenuRepositories = $MenuRepositories;
         $this->LocaleRepositories = $LocaleRepositories;
         $this->MenuToAnyRepositories = $MenuToAnyRepositories;
+        $this->SubscribeRepositories = $SubscribeRepositories;
         $this->middleware('auth');
         view()->share('local',$this->LocaleRepositories->all());
     }
@@ -41,7 +46,9 @@ class PostController extends Controller
                 $query
                     ->where('locale', $locale);
             })->where('type','=','POST')->get();
-        return view('admin.page.post', compact('post', 'locale'));
+        $menu = $this->PostRepositories->menu_to_any()->get();
+        $meniuviu = $this->MenuRepositories->where('type','=','POST')->get();
+        return view('admin.page.post', compact('post', 'locale','menu','meniuviu'));
     }
 
     public function addpost($locale = 'ka', Request $request)
@@ -101,6 +108,16 @@ class PostController extends Controller
                 'row_uuid'=>$add_menu->uuid
             ];
             $this->MenuToAnyRepositories->create($menutoany);
+
+            $subMail  = $this->SubscribeRepositories->where('active','=',1)->get();
+            foreach ($subMail as $subMailthis) {
+                $dataSunscriber = [
+                    'url'=> url('/').'/'.$add_menu->locale.'/full/'.$add_menu->id,
+                    'title'=>$add_menu->title,
+                    'remova'=>$subMailthis->uuid
+                ];
+                Mail::to($subMailthis->email)->send(new OrderShipped($dataSunscriber));
+            }
         }
 
         return view('admin.page.post.add', compact('aboutMenu', 'locale'));

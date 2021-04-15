@@ -24,7 +24,13 @@
                 @endforeach
 
             </div>
+            <div class="container">
+                @foreach ($post as $user)
+                    {{ $user->name }}
+                @endforeach
+            </div>
 
+            {{ $post->links() }}
         </div>
     </section><!-- End Portfolio Section -->
 

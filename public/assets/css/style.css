@@ -1,26 +1,40 @@
 @font-face {
     font-family: 'BPG Nino Mtavruli';
     src: url('../fonts/bpg-nino-mtavruli-webfont.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/bpg-nino-mtavruli-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/bpg-nino-mtavruli-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/bpg-nino-mtavruli-webfont.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/bpg-nino-mtavruli-webfont.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/bpg-nino-mtavruli-webfont.svg#bpg_nino_mtavruliregular') format('svg'); /* Legacy iOS */
+    src: url('../fonts/bpg-nino-mtavruli-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/bpg-nino-mtavruli-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/bpg-nino-mtavruli-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/bpg-nino-mtavruli-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/bpg-nino-mtavruli-webfont.svg#bpg_nino_mtavruliregular') format('svg'); /* Legacy iOS */
 }
-
+@font-face {
+    font-family: 'BPG Banner ExtraSquare Caps';
+    src: url('../fonts/bpg-banner-extrasquare-caps-webfont.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/bpg-banner-extrasquare-caps-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/bpg-banner-extrasquare-caps-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/bpg-banner-extrasquare-caps-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/bpg-banner-extrasquare-caps-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/bpg-banner-extrasquare-caps-webfont.svg#bpg_banner_extrasquare_capsregular') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     font-family: "Open Sans", sans-serif;
 
 }
 
 a {
-    color: #0f722f;
+    color: #0066b1;
     text-decoration: none;
 }
 
 a:hover {
-    color: #e6573f;
+    color: #0e722f;
     text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway", sans-serif;
+    font-family: "BPG Nino Mtavruli", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -77,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .top_text {
-    font-family: 'BPG Nino Mtavruli', sans-serif;
+    /*font-family: 'BPG Nino Mtavruli', sans-serif;*/
 }
 
 #topbar .contact-info i {
@@ -172,6 +186,22 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+.navbar_en a {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 10px;
+    /*font-family: 'BPG Banner ExtraSquare Caps', sans-serif;*/
+    text-transform: uppercase;
+    font-weight: bold;
+    /*font-family: "Poppins", sans-serif;*/
+    font-size: 16px;
+    color: #0066b1;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
 .navbar a {
 
     display: flex;
@@ -179,6 +209,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     padding: 10px 0 10px 10px;
     font-family: 'BPG Nino Mtavruli', sans-serif;
+    text-transform: uppercase;
     font-weight: bold;
     /*font-family: "Poppins", sans-serif;*/
     font-size: 16px;
@@ -401,7 +432,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .carousel-item::before {
     content: '';
-    background-color: rgba(255, 255, 255, 0.6);
+    /**background-color: rgba(255, 255, 255, 0.6); *//
     position: absolute;
     top: 0;
     right: 0;
@@ -426,14 +457,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h2 {
-    color: #2e2e2e;
+    color: #f9fafb;
     margin-bottom: 30px;
     font-size: 48px;
     font-weight: 700;
 }
 
 #hero h2 span {
-    color: #e96b56;
+    color: #0167b1;
+}
+
+#hero h2test1 {
+    color: #0f722f;
 }
 
 #hero p {
@@ -480,12 +515,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1;
     width: auto;
     height: auto;
-    color: #545454;
+    color: #0167b1;
 }
 
 #hero .carousel-indicators li {
     cursor: pointer;
-    background: #e96b56;
+    background: #0167b1;
     overflow: hidden;
     border: 0;
     width: 12px;
@@ -575,7 +610,7 @@ section {
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
-    font-family: "Poppins", sans-serif;
+    font-family: "BPG Nino Mtavruli", sans-serif;
 }
 
 .section-title h2::after {
@@ -584,7 +619,7 @@ section {
     display: block;
     width: 50px;
     height: 3px;
-    background: #e96b56;
+    background: #198754;
     bottom: 0;
     left: calc(50% - 25px);
 }
@@ -800,22 +835,28 @@ section {
     height: 12px;
     background-color: #fff;
     opacity: 1;
-    border: 1px solid #e96b56;
+    border: 1px solid #198754;
 }
 
 .clients .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #e96b56;
+    background-color: #198754;
 }
 
 .clients .swiper-slide img {
-    opacity: 0.5;
-    transition: 0.3s;
-    filter: grayscale(100);
+  /*  opacity: 0.5;
+    transition: 1s;
+    filter: grayscale(50); */
+     filter: none;
+    opacity: 1;
+    
 }
 
 .clients .swiper-slide img:hover {
-    filter: none;
-    opacity: 1;
+     opacity: 0.5;
+    transition: 1s;
+    filter: grayscale(50);
+   /* filter: none;
+    opacity: 1; */
 }
 
 /*--------------------------------------------------------------
@@ -1335,8 +1376,8 @@ section {
 }
 
 .team .member img {
-    max-width: 60%;
-    border-radius: 50%;
+    max-width: 95%;
+    border-radius: 10%;
     margin: 0 0 30px 0;
 }
 
@@ -1545,7 +1586,7 @@ section {
 }
 
 .blog .entry .entry-title a:hover {
-    color: #e96b56;
+    color: #0167b1;
 }
 
 .blog .entry .entry-meta {
@@ -1590,7 +1631,7 @@ section {
 
 .blog .entry .entry-content .read-more a {
     display: inline-block;
-    background: #e96b56;
+    background: #799cb5;
     color: #fff;
     padding: 6px 20px;
     transition: 0.3s;
@@ -1599,7 +1640,7 @@ section {
 }
 
 .blog .entry .entry-content .read-more a:hover {
-    background: #ec7f6d;
+    background: #0167b1;
 }
 
 .blog .entry .entry-content h3 {
@@ -2047,7 +2088,7 @@ section {
     background: #fff;
     padding: 6px 10px;
     position: relative;
-    border-radius: 50px;
+    border-radius: 15px;
 }
 
 #footer .footer-newsletter form input[type="email"] {
@@ -2066,14 +2107,15 @@ section {
     font-size: 16px;
     padding: 0 30px;
     margin: 3px;
-    background: #e96b56;
+    background: #0f722f;
     color: #fff;
     transition: 0.3s;
-    border-radius: 50px;
+    border-radius: 15px;
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-    background: #e6573f;
+    background: #d0d1d6;
+    color: #0f722f;
 }
 
 #footer .footer-top {
@@ -2089,7 +2131,7 @@ section {
 
 #footer .footer-top .footer-info h3 {
     font-size: 18px;
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
     font-weight: 700;
@@ -2101,6 +2143,7 @@ section {
     margin-bottom: 0;
     font-family: "Raleway", sans-serif;
     color: #fff;
+    text-align: justify-all;
 }
 
 #footer .footer-top .social-links a {

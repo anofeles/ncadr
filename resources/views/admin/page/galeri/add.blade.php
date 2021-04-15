@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>მენიუს </h1>
+                    <h1>ფოტო გალერეას დამატება </h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -44,7 +44,7 @@
                                 <div class="form-group">
                                     <!-- select -->
                                     <div class="form-group">
-                                        <label>მენიუ</label>
+                                        <label>მენიუს არჩევა</label>
                                         <select class="custom-select" name="menu_id">
                                             <option value="0">მენიუ</option>
                                             @foreach($aboutMenu as $aboutMenuitem)
@@ -58,7 +58,7 @@
                                     <!-- <label for="customFile">Custom File</label> -->
                                     <div class="custom-file">
                                         <input name="img" type="file" class="custom-file-input @error('img') is-invalid @enderror" id="customFile">
-                                        <label class="custom-file-label" for="customFile">სურათი</label>
+                                        <label class="custom-file-label" for="customFile">ალბომის ყდის ფოტო</label>
                                         @error('img')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -89,7 +89,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">ატვირთვა</button>
                             </div>
                         </form>
                     </div>
